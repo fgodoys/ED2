@@ -1,4 +1,5 @@
 #include "Pilha.h"
+#include <iostream>
 using namespace std;
 
 GenericStack::GenericStack()
@@ -46,17 +47,17 @@ ItemType GenericStack::pop()
 
 bool GenericStack::VerificaCCP(ItemType item)
 {
-	if ((item == ")")&&(info[top] == "("))//compile fail, comparison between pinter and integer
+	if ((item == ')')&&(info[top] == '('))//compile fail, comparison between pinter and integer
 	{
 		pop();
 		return true;
 	}
-	else if ((item == "]")&&(info[top] == "["))
+	else if ((item == ']')&&(info[top] == '['))
 	{
 		pop();
 		return true;
 	}
-	else if ((item == "}")&&(info[top] == "{"))
+	else if ((item == '}')&&(info[top] == '{'))
 	{
 		pop();
 		return true;
