@@ -21,3 +21,4 @@ class GenericStack
   int top;
   ItemType info[MAX_ITEMS];
 };
+//Feito por Bruno Kadri e Felipe Godoy 30/03/2016
