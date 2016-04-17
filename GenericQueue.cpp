@@ -24,7 +24,7 @@ GenericQueue::enqueue(ItemType item)
     NodeType* no;
 	if(not isFull())
 	{
-	    if(isEmpty())// vazio = front e rear apontam para o mesmo n�
+	    if(isEmpty())// vazio = front e rear apontam para o mesmo nó
         {
             no = new NodeType;
             no -> info = item;
@@ -32,7 +32,7 @@ GenericQueue::enqueue(ItemType item)
             front      = no;
             rear       = no;
         }
-        else//apenas rear aponta para o n�
+        else//apenas rear aponta para o nó
         {
             no = new NodeType;
             no -> info = item;
@@ -45,11 +45,11 @@ GenericQueue::enqueue(ItemType item)
 ItemType dequeue()
 {
     NodeType* no;
-    if(isEmpty())
+    if(isEmpty())//se estiver vazio apenas retorna 0
     {
         return '0';
     }
-	else if(not isEmpty() && (no->next != no))
+	else if(not isEmpty() && (no->next != no))//se não estiver vazio e o prox nó não for o mesmo nó, ele deleta esse nó, passa o front adiante e retorna o item
 	{
 	    no = front;
 	    ItemType item = no->info;
@@ -57,7 +57,7 @@ ItemType dequeue()
 	    delete no;
 	    return item;
 	}
-	else if (not is Empty() && (no->next == no))
+	else if (not is Empty() && (no->next == no))//não vazio e o nó é o mesmo que o próximo nó, ele deleta e a lista fica vazia, front e rear nulos e retorna o item
     {
         no = front;
 	    ItemType item = no->info;
